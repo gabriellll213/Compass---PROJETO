@@ -7,11 +7,10 @@ Este guia tem o objetivo de descrever como configurar uma instância EC2 no Amaz
 1. **Gerar um par de chaves (SSH Key Pair):**
     - No terminal (Linux/macOS) ou PowerShell (Windows), execute o comando abaixo para gerar um par de chaves:
       ```bash
-      ssh-keygen -t rsa -b 4096 -f aws_key
-      ```
+      
     - Isso criará dois arquivos:
-      - `aws_key` (chave privada).
-      - `aws_key.pub` (chave pública).
+      - `Chave 01` (chave privada).
+      - `Chave 02` (chave pública).
     - O arquivo `aws_key.pub` será usado para acessar a instância EC2, e o arquivo `aws_key` deve ser mantido seguro.
 
 ## 2. Criar uma instância EC2 com Amazon Linux 2
@@ -32,7 +31,7 @@ Este guia tem o objetivo de descrever como configurar uma instância EC2 no Amaz
 
 5. **Configuração da chave SSH:**
     - Na seção `Key Pair`, selecione `Create a new key pair`.
-    - Carregue a chave pública gerada anteriormente (`aws_key.pub`).
+    - Carregue a chave pública gerada anteriormente (`Chave 02`).
     - Alternativamente, crie uma nova chave diretamente no AWS e use a chave privada.
 
 6. **Configuração de rede:**
@@ -68,7 +67,7 @@ Este guia tem o objetivo de descrever como configurar uma instância EC2 no Amaz
     | 443    | TCP       | HTTPS | 0.0.0.0/0    |
     | 2049   | UDP       | NFS   | 0.0.0.0/0    |
     | 80     | TCP       | HTTP  | 0.0.0.0/0    |
-
+     
 2. **Salvar as configurações:**
     - Após configurar as regras, clique em `Save`.
 
