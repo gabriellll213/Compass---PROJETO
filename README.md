@@ -84,88 +84,73 @@ Agora, sua instância EC2 está pronta, com o Elastic IP associado e as portas d
       ```bash
       sudo yum update -y
       ```
+2. **Instale o Apache:**
 
-2. **Instale o NFS (Network File System):**
-
-    - Para Amazon Linux 2 ou RHEL:
-      ```bash
-      sudo yum install nfs-utils -y
-      ```
-
-3. **Configure o NFS:**
-
-    - Crie o diretório a ser compartilhado:
-      ```bash
-      sudo mkdir -p /home/Gabriel/server-nfs
-      ```
-
-    - Configure as permissões do diretório:
-      ```bash
-      sudo chown -R ec2-user:ec2-user /home/jefferson/server-nfs/
-      sudo chmod 755 /home/Gabriel/server-nfs/
-      ```
-
-    - Edite o arquivo de configuração `/etc/exports`:
-      ```bash
-      sudo nano /etc/exports
-      ```
-
-      - Para permitir o acesso a todos os clientes:
-        ```
-        /home/Gabriel/server-nfs/ *(rw,sync,no_subtree_check)
-        ```
-
-      - Para permitir o acesso apenas a IPs específicos:
-        ```
-        /home/Gabriel/server-nfs/ 192.168.1.0/24(rw,sync,no_subtree_check)
-        ```
-
-    - Aplique as mudanças:
-      ```bash
-      sudo exportfs -a
-      ```
-
-    - Inicie e habilite o serviço NFS:
-
-      - Para Amazon Linux 2 ou RHEL:
-        ```bash
-        sudo systemctl start nfs-server
-        sudo systemctl enable nfs-server
-        ```
-
-
-4. **Verifique o status do NFS:**
-
-    - Para Amazon Linux 2 ou RHEL:
-      ```bash
-      sudo systemctl status nfs-server
-      ```
-
-5. **Verifique as regras de segurança da AWS para a porta 2049 (NFS).**
-
-6. **Instale o Apache:**
-
-    - Para Amazon Linux 2 ou RHEL:
       ```bash
       sudo yum install httpd -y
+      ```
+3. ** Iniciar o Apache:**
+
+      ```bash
       sudo systemctl start httpd
-      sudo systemctl enable httpd
+      sudo systemctl enable
       ```
-
-7. **Verifique o status do Apache:**
-
-    - Para Amazon Linux 2 ou RHEL:
+    - Verificar Status do Apache:
       ```bash
-      sudo systemctl status httpd
+      sudo service status httpd
       ```
-
-    - Para Ubuntu ou Debian:
+ 4. ** Criar diretório para armazenar logs no NFS **
       ```bash
-      sudo systemctl status apache2
+       nfs_client_share
+       nano checkservice
+      /mnt/nfs_client_share *(rw,sync,no_subtree_check,no_root_squash)
       ```
+4. **Criar um script para verificar o status do Apache**
 
-8. **Verifique as regras de segurança da AWS para as portas 80 (HTTP) e 443 (HTTPS).**
+      #!/bin/bash
 
-9. **Abra um navegador e digite o IP público da instância EC2 para ver a página padrão do Apache.**
+      # Definir variáveis
+      SERVICO="httpd"
+      DATA_HORA=$(date "+%Y-%m-%d %H:%M:%S")
+      NOME_SERVICO="Apache"
+      NFS_DIR="/mnt/nfs_client_share/<seu_nome>"
+      ARQUIVO_ONLINE="$NFS_DIR/apache_online.log"
+      ARQUIVO_OFFLINE="$NFS_DIR/apache_offline.log"
 
-## MONITORAMENTO DOS SERVIÇOS
+      # Verificar se o serviço está online
+      if systemctl is-active --quiet $SERVICO; then
+      MENSAGEM="$DATA_HORA - $NOME_SERVICO - Status: ONLINE - Tudo está funcionando corretamente."
+      echo $MENSAGEM >> $ARQUIVO_ONLINE
+   else
+      MENSAGEM="$DATA_HORA - $NOME_SERVICO - Status: OFFLINE - O serviço está inativo!"
+      echo $MENSAGEM >> $ARQUIVO_OFFLINE
+   fi
+.
+
+   ** Documentação Final **
+Para finalizar, assegure-se de que toda a configuração e os scripts estejam devidamente documentados e armazenados no repositório Git. Isso facilita a manutenção futura e permite que outros membros da equipe entendam o processo.
+
+Recomendações para a Documentação:
+README.md:
+
+Crie um arquivo README.md na raiz do repositório com informações detalhadas sobre o projeto, incluindo:
+
+Descrição do Projeto: Breve introdução sobre o objetivo e funcionalidades.
+Pré-requisitos: Listagem de softwares e ferramentas necessárias.
+Passo a Passo de Configuração: Resumo das etapas descritas acima.
+Como Executar os Scripts: Instruções para rodar o script de monitoramento manualmente e via cron.
+Estrutura de Diretórios: Descrição dos principais diretórios e arquivos.
+Contribuição: Diretrizes para colaboradores.
+Licença: Informações sobre a licença do projeto.
+Comentários no Código:
+
+Adicione comentários explicativos nos scripts para facilitar a compreensão.
+
+Versionamento:
+
+Utilize commits claros e descritivos para cada alteração significativa no projeto.
+
+Com isso, concluiu a configuração da instância EC2 com Amazon Linux 2, associou um Elastic IP, liberou as portas de comunicação necessárias, instalou e configurou o NFS e o Apache, criou um script de monitoramento, automatizou sua execução com cron, versionou o projeto com Git e documentou todo o processo. Este ambiente está pronto para uso e manutenção contínua.
+
+    
+
