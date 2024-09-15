@@ -12,7 +12,7 @@ Este guia tem o objetivo de descrever como configurar uma instância EC2 no Amaz
     - Isso criará dois arquivos:
       - `Chave 01` (chave privada).
       - `Chave 02` (chave pública).
-    - O arquivo `aws_key.pub` será usado para acessar a instância EC2, e o arquivo `aws_key` deve ser mantido seguro.
+    - O arquivo `Chave 02` será usado para acessar a instância EC2, e o arquivo `Chave 01` deve ser mantido seguro.
 
 ## 2. Criar uma instância EC2 com Amazon Linux 2
 
