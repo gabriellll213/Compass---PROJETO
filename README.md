@@ -109,7 +109,7 @@ Agora, sua instância EC2 está pronta, com o Elastic IP associado e as portas d
 
       #!/bin/bash
 
-      # Definir variáveis
+   Definir variáveis
       SERVICO="httpd"
       DATA_HORA=$(date "+%Y-%m-%d %H:%M:%S")
       NOME_SERVICO="Apache"
@@ -117,7 +117,7 @@ Agora, sua instância EC2 está pronta, com o Elastic IP associado e as portas d
       ARQUIVO_ONLINE="$NFS_DIR/apache_online.log"
       ARQUIVO_OFFLINE="$NFS_DIR/apache_offline.log"
 
-      # Verificar se o serviço está online
+    Verificar se o serviço está online
       if systemctl is-active --quiet $SERVICO; then
       MENSAGEM="$DATA_HORA - $NOME_SERVICO - Status: ONLINE - Tudo está funcionando corretamente."
       echo $MENSAGEM >> $ARQUIVO_ONLINE
@@ -125,9 +125,9 @@ Agora, sua instância EC2 está pronta, com o Elastic IP associado e as portas d
       MENSAGEM="$DATA_HORA - $NOME_SERVICO - Status: OFFLINE - O serviço está inativo!"
       echo $MENSAGEM >> $ARQUIVO_OFFLINE
    fi
-.
 
-   ** Documentação Final **
+
+  #Documentação Final
 Para finalizar, assegure-se de que toda a configuração e os scripts estejam devidamente documentados e armazenados no repositório Git. Isso facilita a manutenção futura e permite que outros membros da equipe entendam o processo.
 
 Recomendações para a Documentação:
