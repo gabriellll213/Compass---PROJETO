@@ -106,7 +106,7 @@ Agora, sua instância EC2 está pronta, com o Elastic IP associado e as portas d
       /mnt/nfs_client_share *(rw,sync,no_subtree_check,no_root_squash)
       ```
 4. **Criar um script para verificar o status do Apache**
-
+    ```bash
       #!/bin/bash
 
    Definir variáveis
@@ -125,7 +125,7 @@ Agora, sua instância EC2 está pronta, com o Elastic IP associado e as portas d
       MENSAGEM="$DATA_HORA - $NOME_SERVICO - Status: OFFLINE - O serviço está inativo!"
       echo $MENSAGEM >> $ARQUIVO_OFFLINE
    fi
-
+    ```
 
   #Documentação Final
 Para finalizar, assegure-se de que toda a configuração e os scripts estejam devidamente documentados e armazenados no repositório Git. Isso facilita a manutenção futura e permite que outros membros da equipe entendam o processo.
