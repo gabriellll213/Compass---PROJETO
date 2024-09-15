@@ -8,7 +8,7 @@ Este guia tem o objetivo de descrever como configurar uma instância EC2 no Amaz
     - No terminal (Linux/macOS) ou PowerShell (Windows), execute o comando abaixo para gerar um par de chaves:
       ```bash
      ssh-keygen -t rsa -b 4096 -f Chave_02
-     ```
+      ```
     - Isso criará dois arquivos:
       - `Chave 01` (chave privada).
       - `Chave 02` (chave pública).
