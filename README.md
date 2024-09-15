@@ -7,7 +7,8 @@ Este guia tem o objetivo de descrever como configurar uma instância EC2 no Amaz
 1. **Gerar um par de chaves (SSH Key Pair):**
     - No terminal (Linux/macOS) ou PowerShell (Windows), execute o comando abaixo para gerar um par de chaves:
       ```bash
-      
+     ssh-keygen -t rsa -b 4096 -f Chave_02
+     ```
     - Isso criará dois arquivos:
       - `Chave 01` (chave privada).
       - `Chave 02` (chave pública).
@@ -60,13 +61,15 @@ Este guia tem o objetivo de descrever como configurar uma instância EC2 no Amaz
     - No menu de `Security Groups` no console EC2, edite o grupo de segurança associado à instância.
     - Adicione regras de entrada (inbound rules) para liberar as seguintes portas:
 
-    | Porta  | Protocolo | Tipo  | Origem       |
-    |--------|-----------|-------|--------------|
-    | 22     | TCP       | SSH   | 0.0.0.0/0    |
-    | 111    | UDP       | NFS   | 0.0.0.0/0    |
-    | 443    | TCP       | HTTPS | 0.0.0.0/0    |
-    | 2049   | UDP       | NFS   | 0.0.0.0/0    |
-    | 80     | TCP       | HTTP  | 0.0.0.0/0    |
+   | Porta  | Protocolo | Tipo  | Origem       |
+   |--------|-----------|-------|--------------|
+   | 22     | TCP       | SSH   | 0.0.0.0/0    |
+   | 111    | UDP       | NFS   | 0.0.0.0/0    |
+   | 111    | TCP       | NFS   | 0.0.0.0/0    |
+   | 443    | TCP       | HTTPS | 0.0.0.0/0    |
+   | 2049   | UDP       | NFS   | 0.0.0.0/0    |
+   | 2049   | TCP       | NFS   | 0.0.0.0/0    |
+   | 80     | TCP       | HTTP  | 0.0.0.0/0    |
      
 2. **Salvar as configurações:**
     - Após configurar as regras, clique em `Save`.
