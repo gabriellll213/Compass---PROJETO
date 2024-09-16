@@ -133,8 +133,6 @@ Para finalizar, assegure-se de que toda a configuração e os scripts estejam de
 Recomendações para a Documentação:
 README.md:
 
-Crie um arquivo README.md na raiz do repositório com informações detalhadas sobre o projeto, incluindo:
-
 Descrição do Projeto: Breve introdução sobre o objetivo e funcionalidades.
 Pré-requisitos: Listagem de softwares e ferramentas necessárias.
 Passo a Passo de Configuração: Resumo das etapas descritas acima.
@@ -142,9 +140,6 @@ Como Executar os Scripts: Instruções para rodar o script de monitoramento manu
 Estrutura de Diretórios: Descrição dos principais diretórios e arquivos.
 Contribuição: Diretrizes para colaboradores.
 Licença: Informações sobre a licença do projeto.
-Comentários no Código:
-
-Adicione comentários explicativos nos scripts para facilitar a compreensão.
 
 Versionamento:
 
