@@ -89,7 +89,7 @@ Agora, sua instância EC2 está pronta, com o Elastic IP associado e as portas d
       ```bash
       sudo yum install httpd -y
       ```
-      id para ver o Apache Ativo: 98.82.249.130
+      id para ver o Apache Ativo(test): 98.82.249.130
 3. ** Iniciar o Apache:**
 
       ```bash
