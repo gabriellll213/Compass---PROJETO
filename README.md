@@ -127,6 +127,15 @@ Agora, sua instância EC2 está pronta, com o Elastic IP associado e as portas d
       echo $MENSAGEM >> $ARQUIVO_OFFLINE
    fi
     ```
+**Torne o script executável e configure o cron:
+```bash
+   chmod +x checkserve
+   sudo nano /etc/crontab
+ ```
+Adicione a linha:
+```bash
+*/5 * * * * root /home/gabriel/checkservice
+```
 
   #Documentação Final
 Para finalizar, assegure-se de que toda a configuração e os scripts estejam devidamente documentados e armazenados no repositório Git. Isso facilita a manutenção futura e permite que outros membros da equipe entendam o processo.
