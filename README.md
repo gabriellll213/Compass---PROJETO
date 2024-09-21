@@ -114,7 +114,7 @@ Agora, sua instância EC2 está pronta, com o Elastic IP associado e as portas d
       SERVICO="httpd"
       DATA_HORA=$(date "+%Y-%m-%d %H:%M:%S")
       NOME_SERVICO="Apache"
-      NFS_DIR="/mnt/nfs_client_share/<seu_nome>"
+      NFS_DIR="/mnt/nfs_client_share/<gabriel>"
       ARQUIVO_ONLINE="$NFS_DIR/apache_online.log"
       ARQUIVO_OFFLINE="$NFS_DIR/apache_offline.log"
 
