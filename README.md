@@ -94,7 +94,7 @@ Agora, sua instância EC2 está pronta, com o Elastic IP associado e as portas d
 
       ```bash
       sudo systemctl start httpd
-      sudo systemctl enable
+      sudo systemctl enable httpd
       ```
     - Verificar Status do Apache:
       ```bash
