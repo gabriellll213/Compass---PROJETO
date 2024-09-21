@@ -1,4 +1,4 @@
-# Projeto Compass UOL - Gabriel MS
+# Projeto Compass UOL - Gabriel Marques Santos
 
 Este guia tem o objetivo de descrever como configurar uma instância EC2 no Amazon Web Services (AWS) com Amazon Linux 2 e associar um Elastic IP, além de liberar portas de comunicação para acesso público.
 
