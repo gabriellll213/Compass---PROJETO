@@ -80,7 +80,7 @@ Agora, sua instância EC2 está pronta, com o Elastic IP associado e as portas d
 
 1. **Conecte-se à Instância EC2 via SSH** e atualize o sistema:
 
-    - Para Amazon Linux 2 ou RHEL:
+     Para Amazon Linux 2 ou RHEL:
       ```bash
       sudo yum update -y
       ```
