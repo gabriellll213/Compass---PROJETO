@@ -155,7 +155,7 @@ Versionamento:
 
 Utilize commits claros e descritivos para cada alteração significativa no projeto.
 
-Com isso, concluiu a configuração da instância EC2 com Amazon Linux 2, associou um Elastic IP, liberou as portas de comunicação necessárias, instalou e configurou o NFS e o Apache, criou um script de monitoramento, automatizou sua execução com cron, versionou o projeto com Git e documentou todo o processo. Este ambiente está pronto para uso e manutenção contínua.
+Com isso, conclui a configuração da instância EC2 com Amazon Linux 2, associei a Elastic IP, liberei as portas de comunicação necessárias, instalei e configurei o NFS e o Apache, criei um script de monitoramento, automatizei sua execução com crontab, versionou o projeto com Git e documentou todo o processo. Este ambiente está pronto para uso e manutenção contínua.
 
     
 
