@@ -129,7 +129,7 @@ Agora, sua instância EC2 está pronta, com o Elastic IP associado e as portas d
     ```
 **Torne o script executável e configure o cron:
 ```bash
-   chmod +x checkserve
+   chmod +x checkserveice
    sudo nano /etc/crontab
  ```
 Adicione a linha:
