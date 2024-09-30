@@ -98,7 +98,7 @@ Agora, sua instância EC2 está pronta, com o Elastic IP associado e as portas d
       ```
     - Verificar Status do Apache:
       ```bash
-      sudo service status httpd
+      sudo systemctl status httpd
       ```
  4. ** Criar diretório para armazenar logs no NFS **
       ```bash
@@ -109,7 +109,7 @@ Agora, sua instância EC2 está pronta, com o Elastic IP associado e as portas d
 4. **Criar um script para verificar o status do Apache**
     ```bash
       #!/bin/bash
-
+    
    Definir variáveis
       SERVICO="httpd"
       DATA_HORA=$(date "+%Y-%m-%d %H:%M:%S")
